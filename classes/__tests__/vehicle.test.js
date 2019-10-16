@@ -14,7 +14,7 @@ describe('Vehicles', () => {
         case 'Constructor':
           return new VehicleConstructor.Car('foo');
         case 'class':
-          return new VehicleClass.Car('foo',4);
+          return new VehicleClass.Car('foo');
         default:
           return {};
       }

@@ -2,14 +2,14 @@
   "name": "classes-inheritance",
   "version": "1.0.0",
   "description": "migrating working code into a new methodology or tech stack.",
-  "main": "index.js",
+  "main": "list/index.js",
   "scripts": {
-    "start": "node index.js",
-    "lint": "eslint '**/*.js'",
-    "test": "jest --coverage --verbose",
-    "test-watch": "jest --watchAll --verbose --coverage",
-    "jsdoc": "jsdoc -c ./docs/config/jsdoc.config.json",
-    "watch": "jest --watchAll --coverage --verbose"
+    "start": "node list/index.js",
+    "lint": "node_modules/.bin/eslint '**/*.js'",
+    "test": "node_modules/.bin/jest --coverage --verbose",
+    "test-watch": "node_modules/.bin/jest --watchAll --verbose --coverage",
+    "jsdoc": "node_modules/.bin/jsdoc -c ./docs/config/jsdoc.config.json",
+    "watch": "node_modules/.bin/jest --watchAll --coverage --verbose"
   },
   "repository": {
     "type": "git",

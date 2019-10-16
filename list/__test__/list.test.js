@@ -1,16 +1,21 @@
-const ListTest = require('../../lib/list.test.js');
+const List = require('./lib/list.js');
 
 describe('List', () => {
 
   let testArray = ['A1', 'A2', 'A3'];
   let loadList = () => {
-    let thisList = new ListTest();
+    let thisList = new List();
     for( let i = 0; i <= testArray.length - 1; i++ ) {
       thisList.push(testArray[i]);
     }
     return thisList;
   };
 
+  /**
+   * adds one or more elements to the end of an array and returns the new length of the array.
+   * @constructor
+   *
+   */
   it('push() keeps the list the same if no element is pushed', () => {
     let myList = loadList();
     expect( myList.length ).toEqual(3);
@@ -29,8 +34,13 @@ describe('List', () => {
     expect( myList.data[myList.length - 1] ).toEqual('FOO');
   });
 
+  /**
+   * removes the last element from an array and returns that element. This method changes the length of the array.
+   * @constructor
+   *
+   */
   it('pop() undefined on an empty list', () => {
-    let myList = new ListTest();
+    let myList = new List();
     expect( myList.pop() ).toBeUndefined();
   });
 
@@ -45,6 +55,11 @@ describe('List', () => {
     expect( myList.length ).toEqual(2);
   });
 
+  /**
+   * adds one or more elements to the beginning of an array and returns the new length of the array.
+   * @constructor
+   *
+   */
   it('unshift() increments the .length property', () => {
     let myList = loadList();
     myList.unshift('foobar');
@@ -57,6 +72,11 @@ describe('List', () => {
     expect( myList.data[0] ).toEqual('FOO');
   });
 
+  /**
+   * removes the first element from an array and returns that element. This method changes the length of the array.
+   * @constructor
+   *
+   */
   it('shift() returns the first item', () => {
     let myList = loadList();
     expect( myList.shift() ).toEqual(testArray[0]);
@@ -68,8 +88,13 @@ describe('List', () => {
     expect( myList.length ).toEqual(2);
   });
 
+  /**
+   * executes a provided function once per array element.
+   * @constructor
+   *
+   */
   it('forEach() does not run if there is nothing in the list', () => {
-    let myList = new ListTest();
+    let myList = new List();
     let iterations = 0;
     myList.forEach( item => {
       iterations++;
@@ -86,8 +111,13 @@ describe('List', () => {
     expect(iterations).toEqual(myList.length);
   });
 
+  /**
+   * creates a new array with the results of calling a provided function on every element in this array.
+   * @constructor
+   *
+   */
   it('map() returns undefined if the list is empty', () => {
-    let myList = new ListTest();
+    let myList = new List();
     expect( myList.map(v => v > 1) ).toBeUndefined();
   });
 
@@ -103,8 +133,13 @@ describe('List', () => {
 
   });
 
+  /**
+   * creates a new array with all elements that pass the test implemented by the provided function.
+   * @constructor
+   *
+   */
   it('filter() returns undefined if the list is empty', () => {
-    let myList = new ListTest();
+    let myList = new List();
     expect( myList.filter(v => v > 1) ).toBeUndefined();
   });
 
@@ -120,8 +155,13 @@ describe('List', () => {
 
   });
 
+  /**
+   * applies a function against an accumulator and each value of the array (from left-to-right) to reduce it to a single value.
+   * @constructor
+   *
+   */
   it('reduce() returns undefined if the list is empty', () => {
-    let myList = new ListTest();
+    let myList = new List();
     expect( myList.reduce() ).toBeUndefined();
   });
 
