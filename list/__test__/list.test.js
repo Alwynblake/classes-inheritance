@@ -1,10 +1,10 @@
-const ListTest = require('../../lib/list.test.js');
+const List = require('./lib/list.js');
 
 describe('List', () => {
 
   let testArray = ['A1', 'A2', 'A3'];
   let loadList = () => {
-    let thisList = new ListTest();
+    let thisList = new List();
     for( let i = 0; i <= testArray.length - 1; i++ ) {
       thisList.push(testArray[i]);
     }
@@ -30,7 +30,7 @@ describe('List', () => {
   });
 
   it('pop() undefined on an empty list', () => {
-    let myList = new ListTest();
+    let myList = new List();
     expect( myList.pop() ).toBeUndefined();
   });
 
@@ -69,7 +69,7 @@ describe('List', () => {
   });
 
   it('forEach() does not run if there is nothing in the list', () => {
-    let myList = new ListTest();
+    let myList = new List();
     let iterations = 0;
     myList.forEach( item => {
       iterations++;
@@ -87,7 +87,7 @@ describe('List', () => {
   });
 
   it('map() returns undefined if the list is empty', () => {
-    let myList = new ListTest();
+    let myList = new List();
     expect( myList.map(v => v > 1) ).toBeUndefined();
   });
 
@@ -104,7 +104,7 @@ describe('List', () => {
   });
 
   it('filter() returns undefined if the list is empty', () => {
-    let myList = new ListTest();
+    let myList = new List();
     expect( myList.filter(v => v > 1) ).toBeUndefined();
   });
 
@@ -121,7 +121,7 @@ describe('List', () => {
   });
 
   it('reduce() returns undefined if the list is empty', () => {
-    let myList = new ListTest();
+    let myList = new List();
     expect( myList.reduce() ).toBeUndefined();
   });
 
