@@ -5,7 +5,7 @@
   "main": "list/index.js",
   "scripts": {
     "start": "node list/index.js",
-    "lint": "node_modules/.bin/eslint '**/*.js'",
+    "lint": "eslint '**/*.js'",
     "test": "node_modules/.bin/jest --coverage --verbose",
     "test-watch": "node_modules/.bin/jest --watchAll --verbose --coverage",
     "jsdoc": "node_modules/.bin/jsdoc -c ./docs/config/jsdoc.config.json",
